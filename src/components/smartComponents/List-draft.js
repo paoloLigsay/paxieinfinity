@@ -15,7 +15,7 @@ const List = React.memo(() => {
   }
 
   const get_transactions = async () => {
-    const response = await axios.get('http://localhost:3001/gettransactions/'+null, {
+    const response = await axios.get('https://hidden-bastion-54706.herokuapp.com/gettransactions/'+null, {
       withCredentials: true
     })
 
@@ -33,7 +33,7 @@ const List = React.memo(() => {
   }
 
   const logout = async () => {
-    await axios.post('http://localhost:3001/logout', {
+    await axios.post('https://hidden-bastion-54706.herokuapp.com/logout', {
       withCredentials: true
     })
     Cookies.remove('paxie-access-token')

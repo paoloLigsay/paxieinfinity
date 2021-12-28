@@ -13,7 +13,7 @@ const Transactions = memo(() => {
   const [transactions, setTransactions] = useState([])
 
   const get_initial_data = async() => {
-    const response = await axios.get(`http://localhost:3001/gettransactions/${localStorage.getItem('paxieUserID')}`, {
+    const response = await axios.get(`https://hidden-bastion-54706.herokuapp.com/gettransactions/${localStorage.getItem('paxieUserID')}`, {
       withCredentials: true
     })
 

@@ -19,7 +19,7 @@ const Login = React.memo(() => {
   const login = async () => {
     try {
       console.log('accessing login')
-      const res = await axios.post('http://localhost:3001/login', {
+      const res = await axios.post('https://hidden-bastion-54706.herokuapp.com/login', {
           username: username,
           password: password
         },

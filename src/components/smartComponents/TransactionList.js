@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const TransactionList = memo(({transactions, getTransactions}) => {
   const deleteTransaction = async (id) => {
-    const res = await axios.delete(`http://localhost:3001/deletetransactions/${id}`)
+    const res = await axios.delete(`https://hidden-bastion-54706.herokuapp.com/deletetransactions/${id}`)
     alert(res.data)
     getTransactions()
   }

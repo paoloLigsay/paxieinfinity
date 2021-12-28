@@ -43,7 +43,7 @@ const Dashboard = () => {
   const [highestUserData, setHighestUserData] = useState(initialDataOverall)
 
   const get_initial_data = async () => {
-    const response = await axios.get(`http://localhost:3001/gettransactions/${localStorage.getItem('paxieUserID')}`, {
+    const response = await axios.get(`https://hidden-bastion-54706.herokuapp.com/gettransactions/${localStorage.getItem('paxieUserID')}`, {
       withCredentials: true
     })
 
@@ -92,7 +92,7 @@ const Dashboard = () => {
     })
 
     /* Highest MMR Overall */
-    const response2 = await axios.get(`http://localhost:3001/gettransactions/${null}`, {
+    const response2 = await axios.get(`https://hidden-bastion-54706.herokuapp.com/gettransactions/${null}`, {
       withCredentials: true
     })
 
@@ -111,11 +111,11 @@ const Dashboard = () => {
       highestSLPOverall = transactionsToday
         .reduce((a,b) => a.slp > b.slp ? a : b)
 
-      const userInformationHighestSLP = await axios.get(`http://localhost:3001/getUserHighestOverall/${highestSLPOverall.user_id}`, {
+      const userInformationHighestSLP = await axios.get(`https://hidden-bastion-54706.herokuapp.com/getUserHighestOverall/${highestSLPOverall.user_id}`, {
         withCredentials: true
       })
 
-      const userInformationHighestMMR = await axios.get(`http://localhost:3001/getUserHighestOverall/${highestMMROverall.user_id}`, {
+      const userInformationHighestMMR = await axios.get(`https://hidden-bastion-54706.herokuapp.com/getUserHighestOverall/${highestMMROverall.user_id}`, {
         withCredentials: true
       })
 

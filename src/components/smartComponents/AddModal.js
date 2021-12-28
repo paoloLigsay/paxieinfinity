@@ -12,7 +12,7 @@ const AddModal = React.memo(({openModal, setOpenModal, getTransactions}) => {
 
   const addTransaction = () => {
     const add = async () => {
-      const resp = await axios.post('http://localhost:3001/addtransaction', {
+      const resp = await axios.post('https://hidden-bastion-54706.herokuapp.com/addtransaction', {
         month: month,
         day: day,
         year: year,
