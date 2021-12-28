@@ -47,6 +47,8 @@ const Dashboard = () => {
       withCredentials: true
     })
 
+    console.log(response)
+
     const gainedTransactions = response.data.filter(t => t.type === 'Gained')
     const withdrawedTransactions = response.data.filter(t => t.type === 'Withdrawed')
 
