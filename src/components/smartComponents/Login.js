@@ -34,12 +34,12 @@ const Login = React.memo(() => {
         Cookies.set('paxie-access-token', res.data.token)
       }
 
-      console.log(res)
+      console.log(res.data.obj._doc._id)
 
       res.data === 'wrong' ? alert('Wrong Password')
         : res.data === 'no user' ? alert('Username not Found')
         : res.data === 'empty' ? alert('Please Fill up all fields')
-        : res.data._id !== undefined && res.data.obj._doc._id !== '' ? loginSuccess(res.data)
+        : res.data.obj._doc._id !== undefined && res.data.obj._doc._id !== '' ? loginSuccess(res.data)
         : alert('Unexpected Error: ' + res.data.Error)
 
     } catch (e) {
