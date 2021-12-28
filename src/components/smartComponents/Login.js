@@ -29,8 +29,9 @@ const Login = React.memo(() => {
       const loginSuccess = (data) => {
         console.log(data)
         setAuthBreaker(true)
-        localStorage.setItem('paxieUserID', data._id)
-        localStorage.setItem('paxieUserPercent', data.percent)
+        localStorage.setItem('paxieUserID', data.obj._doc._id)
+        localStorage.setItem('paxieUserPercent', data.obj._doc.percent)
+        Cookies.set('paxie-access-token', res.data.token)
       }
 
       console.log(res)
@@ -38,7 +39,7 @@ const Login = React.memo(() => {
       res.data === 'wrong' ? alert('Wrong Password')
         : res.data === 'no user' ? alert('Username not Found')
         : res.data === 'empty' ? alert('Please Fill up all fields')
-        : res.data._id !== undefined && res.data._id !== '' ? loginSuccess(res.data)
+        : res.data._id !== undefined && res.data.obj._doc._id !== '' ? loginSuccess(res.data)
         : alert('Unexpected Error: ' + res.data.Error)
 
     } catch (e) {
